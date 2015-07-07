@@ -76,7 +76,7 @@ public class User {
 
 	// metod za isplatu novca korisniku
 	public void withdraw(double amount) throws Exception {
-		// List<User> list = new ArrayList<User>();
+		
 		AtmMachine atm = new AtmMachine();
 		if (amount > accountBalance) {
 			System.out
