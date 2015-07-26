@@ -220,8 +220,8 @@ public class Methods {
 		if (u.getName().equals(u1.getName())
 				&& u.getPassword() == (u1.getPassword())) {
 
-			return true;
+			
 		}
-		return false;
+		return true;
 	}
 }
