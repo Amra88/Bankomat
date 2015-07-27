@@ -54,7 +54,7 @@ public class Methods {
 		int userCount = 0;
 		User user = null;
 		String username;
-		int password;
+		int password=1111;
 		boolean condition = true;
 		boolean usernameCondition = true;
 		boolean passCondition = false;
@@ -89,9 +89,12 @@ public class Methods {
 			while (!usernameCondition && passCondition) {
 				System.out.println("\nUnesite password "
 						+ userList.get(userIndex).getName() + ": ");
+				try{
 				password = input.nextInt();
-				passCount++;
-
+				}catch(InputMismatchException ex){
+					passCount++;
+					input.nextLine();
+				}
 				for (User u : userList) {
 					if (u.getPassword() == password) {
 						user = userList.get(userIndex);
