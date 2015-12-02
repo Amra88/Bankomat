@@ -218,13 +218,15 @@ public class Methods {
 	}
 
 	// metod koji provjerava da li korisnik vec postoji u file-u
-	public static boolean checkUser(User u) {
-		User u1 = new User();
-		if (u.getName().equals(u1.getName())
-				&& u.getPassword() == (u1.getPassword())) {
-
-			
+	public static boolean checkUser(User u) throws IOException {
+		boolean exists = false;
+		List<User> userList = loadUserFromFile();// metod za ucitavanje liste korisnika iz file-a
+		for (User us : userList) {
+			if (u.getName().equals(us.getName())
+					&& u.getPassword() == (us.getPassword())) {
+				exists = true;
+			}
 		}
-		return true;
+		return exists;
 	}
 }
